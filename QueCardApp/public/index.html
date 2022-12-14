@@ -18,34 +18,35 @@
         </div>
     </header>
       <!-- Input form for que cards -->
-    <div class="container-fluid w-75 m-auto my-3">
+    <div class="container-fluid my-3">
         <div class="row">
             <div class="col text-center">
-                <h1 class="mb-4">Input Questions & Answers</h1>
+                <h1 class="mb-4">Study Helper V1.0</h1>
                 <button class="btn btn-lg btn-dark" data-bs-toggle="modal" type="button" data-bs-target="#modalForm">Add Que Card</a>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid m-auto">
             <div class="row">
                 <div class="col mt-4 text-center">
-                    <button class="btn btn-lg btn-success mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#queCardBox" aria-expanded="false" aria-controls="queCardBox">
+                    <button class="btn btn-lg btn-success mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-controls="collapse">
                     View Que-Cards
                     </button>
                 </div>
-            <div class="collapse" id="queCardBox">
-                
+            <div class="collapse" id="collapse">
+                <div class="d-flex flex-wrap" id="queCardBox">
+
+                </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content shadow">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Fill question information</h5>
+                    <h5 class="modal-title" id="modalTitle">Fill in question information</h5>
                     <button type="button" class="btn-close" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bg-dark">
-                    <form id="inputs" class="needs-validation" novalidate="">
                         <div class="form-group mx-2 mb-3">
                             <label for="question" class="text-light mb-3">Question:</label>
                             <input type="text" class="form-control" id="question" required="">
@@ -54,11 +55,9 @@
                             <label for="answer" class="text-light mb-3">Answer:</label>
                             <input type="text" class="form-control" id="answer" required="">
                         </div>
+                        <button id="submit" type="button" data-bs-toggle="modal" class="btn btn-primary">Submit</button>
                     </form>
-                </div>  
-                <div class="modal-footer m-auto">
-                    <button id="submit" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">Submit</button>
-                </div>
+                </div> 
             </div>
         </div>
     </div>
