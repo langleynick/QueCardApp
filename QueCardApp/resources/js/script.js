@@ -4,6 +4,15 @@ $(function() {
     let cardCount = 0;  //counter for card count
     let queCards = [];  //array of que cards
 
+    if($('#question').val("")|| $('#answer').val("")){
+        $('#submit').attr('disabled', 'disabled');
+    }
+    $('textarea').on('input', function(){
+        if($('#question').val() != " " && $('#answer').val() != " "){
+            $('#submit').removeAttr('disabled');
+        }
+    });
+    
     //on submit of modal input
     $('#submit').on('click', function(){
 
@@ -13,7 +22,7 @@ $(function() {
         //get values from input tags
         let $question = $("#question").val();
         let $answer = $("#answer").val();
-
+        
         //create the card
         let $cardContent = $("<div class='col card m-4'></div>");
 
@@ -42,7 +51,10 @@ $(function() {
             $(this).parent().next().css("display", "none");
         });
 
+        //reset the modal inputs
         $("#question").val(" ");
         $("#answer").val(" ");
+        
+        $('#submit').attr('disabled', 'disabled');
     });
 });
